@@ -1,11 +1,13 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
 class Cita {
     private String paciente;
-    private String fecha;
-    private String hora;
+    private LocalDate fecha;
+    private LocalTime hora;
 
-    public Cita(String paciente, String fecha, String hora) {
+    public Cita(String paciente, String fecha, LocalTime hora) {
         this.paciente = paciente;
-        this.fecha = fecha;
+        this.fecha = LocalDate.parse(fecha);
         this.hora = hora;
     }
 
@@ -13,11 +15,11 @@ class Cita {
         return paciente;
     }
 
-    public String getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public String getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 }
